@@ -1,5 +1,8 @@
 import { html, css, LitElement } from 'lit';
 import { customElement } from 'lit/decorators.js';
+import { defineComponents, IgcButtonComponent, IgcRippleComponent } from 'igniteui-webcomponents';
+
+defineComponents(IgcButtonComponent, IgcRippleComponent);
 
 @customElement('app-master-view')
 export default class MasterView extends LitElement {
@@ -11,6 +14,11 @@ export default class MasterView extends LitElement {
       align-items: stretch;
       align-content: flex-start;
     }
+    .button {
+      height: max-content;
+      min-width: min-content;
+      flex-shrink: 0;
+    }
   `;
 
   render() {
@@ -18,6 +26,14 @@ export default class MasterView extends LitElement {
       <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
       <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet'>
       <link rel='stylesheet' href='../../ig-theme.css'>
+      <igc-button class="button">
+        Button
+        <igc-ripple></igc-ripple>
+      </igc-button>
+      <igc-button class="button">
+        Button
+        <igc-ripple></igc-ripple>
+      </igc-button>
     `;
   }
 }
